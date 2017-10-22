@@ -60,9 +60,10 @@ bot.dialog('survey', [
         builder.Prompts.text(session, 'Hey There! What is your name?');
     },
     function (session, results) {
-        // get the name of the user and save it
+        // get the name of the user and save i
+        var name = results.response;
         session.userData.name = results.response;
-        builder.Prompts.number(session, 'Hi ' + results.response + ', How many years have you been coding?');
+        builder.Prompts.number(session, 'Hi ' + name + ', How many years have you been coding?');
     },
     function (session, results) {
         session.userData.coding = results.response;
